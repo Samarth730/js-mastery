@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .bg-colore{
+            background-color: black;
+            color: #fff;
+
+        }
+    </style>
+</head>
+<body class="bg-colore">
+    <!-- in this h1 tag i use a span for unvible content and a devloper use in the prperty called textContent to thre all the h1 content or it basicaly give hidden content in the html tag-->
+    <h1 style="background-color: aqua;" id="title" class="heading">DOM Learnig is progress <span style="display: none;">in this we are using span as a visible none</span></h1>
+    <h2>this is use for querySelectore on return a tag</h2> <!--to acces this in dev tool we add query sect and get tag and using class name gaven using .and#beforeThe Name-->
+    <h3 class="httag" id="select">this is use for id and class selector</h3>
+    <p>Loren Son Abrevation</p>
+    <input type="button" value="">
+    <ul>
+    <li class="list-item">one</li>
+    <li class="list-item">one</li>
+    <li class="list-item">one</li>
+    <li class="list-item">one</li><!--if we li class item manuplate and which we return as getByclassName it's value is html Collection  -->
+    <!--so we cannot itirat over using any high order we first convert using Array.form() classMethaod to return as a array and perform such manupalte -->
+    <script>let source=document.querySelector("li")
+    source.innerText="foure";
+    document.querySelector("li");
+    //dii of querySellect and queryall is how the data will return 
+
+    const myLi = document.querySelectorAll("li"); 
+    </script><!---here we use to manuplate content by using querySelecoter-->
+
+    
+</ul>
+    
+</body>
+</html>
+
+
+<script>//it is uside in dev tool//Array.from(myli);myli[0].style.color="blue";</script>
