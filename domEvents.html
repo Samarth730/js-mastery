@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html events</title>
+</head>
+<body>
+    <ul id="language">
+        <li><img src="photo_2024-10-22_20-15-10.jpg"  id="any"  alt="Photo1" width="200px"></li>
+        <li><img src="photo_2024-10-22_20-15-10.jpg" id="good" alt="Photo"width="200px"></li>
+        <li><img src="photo_2024-10-22_20-15-10.jpg" id="bad"  alt="Photo" width="200px"></li>
+        <li><img src="photo_2024-10-22_20-15-10.jpg" id="sol"  alt="Photo" width="200px"></li>
+        <li style="color: aliceblue;"><a href="https://google.com" id = "google">google</a></li>
+    </ul>
+    <script>//js is a squential languge and also single threded
+    //    document.getElementById("any").onclick = ()=>{alert("on cleced")} //this is old approch and it's not pravid fethures on this
+       
+      //NOTE : IS THE good approch to use and give propagation on this
+        // document.getElementById("any").addEventListener('click',function(){
+        //     alert("click is good and best appproch",false)
+        // });
+
+        // document.getElementById("good").addEventListener('click',function(e){
+        //     console.log(e)
+        // });
+
+        // IMP: type,timeStamp,defulyPrivented,target,toelement,currenttarget
+        
+
+        //NOTE:*** here we study eventPorpagetion which is triger first which one is after print
+        document.getElementById("language").addEventListener('click',function(e){
+            console.log("clicked is ul")
+        },false);
+       // event bubling 
+        document.getElementById("any").addEventListener('click',function(e){
+            console.log("clicked is li any")
+            e.stopPropagation();// this methad is avoid to bubling only click li
+        },false);
+
+        document.getElementById("google").addEventListener('click',function(e){
+            console.log("clicked is only google")
+            e.stopPropagation();
+            e.preventDefault();//this methad is avoiding to navigate the google wesite or not working link
+               // this methad is avoid to bubling only click li
+        },false);
+
+        document.querySelector("#language").addEventListener("click",function(e){
+        console.log(e.target.tagName);//here parentNode property is used for return liTag
+        if (e.target.tagName == "IMG") {
+            console.log((e.target.id));
+            let removeit = e.target.parentNode;
+            removeit.remove();
+        }
+        // let removeit = e.target.parentNode
+        // removeit.remove();
+        // removeit.parentNode.removeChild(removeit);
+        })
+             
+    </script>
+    
+</body>
+</html>
