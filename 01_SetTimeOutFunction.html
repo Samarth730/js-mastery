@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTime Function In Asinc</title>
+</head>
+<body>
+    <h1>Asinc Functions</h1>
+    <button id="stop">Stop</button>
+    <script>
+        // handler is like call back function but it has no name 
+        let setTime = function(){
+            console.log("Samarth");
+            
+        }
+        setTimeout(setTime,2000);// this function done after 2sec then i do my work or execute after the 2 sec
+        
+        // this arrow function is done work after 2 sec time
+        let Change = ()=>{
+          document.querySelector("h1").innerHTML="HI Today is wednesday Sale"
+            
+        }
+        const stopMe  = setTimeout(Change,2000);// this function done after 2sec then i do my work or execute after the 2 sec
+
+
+
+
+        // clearTimeout(stopMe)
+        // now i want to Stop timeOut function before the execution  but i want stope by clicking butoon
+        
+        document.querySelector("#stop").addEventListener('click',()=>{
+            clearTimeout(stopMe);//it is a core function to stop a SetTime OUT Function before by cliking this
+            console.log("stopped");
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

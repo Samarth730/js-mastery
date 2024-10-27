@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Function</title>
+</head>
+<body>
+    <h1>HI Can You Change Me</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        let interval,colore;
+        document.querySelector("#start").addEventListener('click',function(){
+        if(!interval){
+           
+        //    hi=setInterval(()=>{document.body.style.backgroundColor="green"},2000)
+        interval = setInterval((str)=>{console.log(str,Date.now());},1000,"samarth")
+          // in this interval function to use for continouly do one work after take some time infintly;
+        }
+      
+    })
+
+      document.querySelector("#stop").addEventListener('click',function(){
+          if(interval){
+            clearInterval(interval);
+            interval = null;
+            console.log("interval is now stoped");
+          }
+        })
+
+
+        
+    </script>
+</body>
+</html>
