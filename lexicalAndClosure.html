@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button id="Red">Red</button>
+<button id="Green">Green</button>
+<body style="background-color: #313131;">
+
+   <script>
+
+    /// lexical Scoping : said that the innere function have the acsess of oter function 
+    // function outer(){
+    //     let name = "Samarth";
+
+    //     function inner(){
+    //        let secrate = "MG"
+    //         console.log("inner ",name);
+    //     }
+    //     function innerTow(){
+    //         console.log("innerTow ",name);
+    //         // console.log(secrate);//this will not print becouse of child  not sharing there property to each othere
+
+    //     }
+        
+    //     inner();
+    //     innerTow();
+    //     //here this inneer function share the same memore of outer function but we cant give inner function or call to outside the function
+    // }
+    // outer();
+    // console.log("outter ",name);
+
+
+    // here real word scenario for lexical and clouser
+    //  document.querySelector("#Red").addEventListener('click',function(){
+    //     document.body.style.backgroundColor = "Red"
+    // })
+    // document.querySelector("#Green").addEventListener('click',function(){
+    //     document.body.style.backgroundColor = "green"
+    // })
+    // this will execute the not only one time it will repeet whener we want then so now write the generic forom of code
+
+
+    function onClickHandler(colore)
+    {
+    //    if i use here closure then return a function and we can access the MediaStreamAudioSourceNode
+         return function(){
+            document.body.style.backgroundColor = `${colore}`
+         }
+    }
+
+    // now call the function
+    document.getElementById("Red").addEventListener('click',onClickHandler("red"))
+    document.getElementById("Green").addEventListener('click',onClickHandler("Green"))
+
+
+
+
+
+   </script>
+
+    
+</body>
+</html>
